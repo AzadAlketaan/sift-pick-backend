@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Dashboard\UserController;
+use Inertia\Inertia; 
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/users', [UserController::class, 'index']);
+
 Route::get('/', function () {
-    return view('welcome');
+    return Inertia::render('Test'); // This will get component Test.jsx from the resources/js/Pages/Test.jsx
 });
